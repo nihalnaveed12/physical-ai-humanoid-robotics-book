@@ -1,0 +1,99 @@
+/**
+ * Copyright (c) 2017-present, Facebook, Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+/**
+ * Any CSS included here will be global. The classic template
+ * bundles Infima by default. Infima is a CSS framework designed to
+ * work well for content-centric websites.
+ */
+
+/* You can override the default Infima variables here. */
+:root {
+  --ifm-color-primary: #2e8555;
+  --ifm-color-primary-dark: #29784c;
+  --ifm-color-primary-darker: #277148;
+  --ifm-color-primary-darkest: #205d3b;
+  --ifm-color-primary-light: #33925d;
+  --ifm-color-primary-lighter: #359962;
+  --ifm-color-primary-lightest: #3cad6e;
+  --ifm-code-font-size: 95%;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+}
+
+/* For readability concerns, you should choose a lighter palette in dark mode. */
+[data-theme='dark'] {
+  --ifm-color-primary: #25c2a0;
+  --ifm-color-primary-dark: #21af90;
+  --ifm-color-primary-darker: #1fa588;
+  --ifm-color-primary-darkest: #1a8870;
+  --ifm-color-primary-light: #29d5b0;
+  --ifm-color-primary-lighter: #32d8b4;
+  --ifm-color-primary-lightest: #4fddbf;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+}
+
+/* Custom styles for robotics content */
+.robotics-code-block {
+  border-left: 4px solid var(--ifm-color-primary);
+  margin: 1rem 0;
+  padding: 0.5rem 1rem;
+}
+
+.robotics-figure {
+  text-align: center;
+  margin: 1.5rem 0;
+  padding: 1rem;
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: 8px;
+}
+
+.robotics-figure img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+
+.robotics-figure figcaption {
+  margin-top: 0.5rem;
+  font-style: italic;
+  color: var(--ifm-color-emphasis-700);
+}
+
+/* Custom sidebar styles for module organization */
+.menu__list-item--module {
+  border-top: 1px solid var(--ifm-color-emphasis-300);
+  padding-top: 0.5rem;
+}
+
+/* Custom styles for exercises */
+.exercise-box {
+  border: 2px solid var(--ifm-color-primary-light);
+  border-radius: 8px;
+  padding: 1rem;
+  margin: 1rem 0;
+  background-color: rgba(46, 133, 85, 0.05);
+}
+
+.exercise-title {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  color: var(--ifm-color-primary);
+}
+
+/* Custom styles for code examples */
+.ros-code-example {
+  background-color: #f6f8fa;
+  border-radius: 6px;
+  padding: 1rem;
+  margin: 1rem 0;
+  font-family: var(--ifm-font-family-monospace);
+  font-size: 0.9rem;
+}
+
+[data-theme='dark'] .ros-code-example {
+  background-color: #2d3748;
+}

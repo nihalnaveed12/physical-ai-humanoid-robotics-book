@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400">
+  <!-- Background -->
+  <rect width="800" height="400" fill="#f8f9fa"/>
+
+  <!-- Title -->
+  <text x="400" y="40" font-family="Arial" font-size="20" text-anchor="middle" fill="#2c3e50">Digital Twin Setup Overview</text>
+
+  <!-- Gazebo Box -->
+  <rect x="100" y="100" width="200" height="150" fill="#3498db" stroke="#2980b9" stroke-width="2" rx="10"/>
+  <text x="200" y="130" font-family="Arial" font-size="16" text-anchor="middle" fill="white">Gazebo</text>
+  <text x="200" y="155" font-family="Arial" font-size="12" text-anchor="middle" fill="white">Physics Simulation</text>
+  <text x="200" y="175" font-family="Arial" font-size="12" text-anchor="middle" fill="white">ROS Integration</text>
+  <text x="200" y="195" font-family="Arial" font-size="12" text-anchor="middle" fill="white">Sensor Simulation</text>
+
+  <!-- Unity Box -->
+  <rect x="500" y="100" width="200" height="150" fill="#9b59b6" stroke="#8e44ad" stroke-width="2" rx="10"/>
+  <text x="600" y="130" font-family="Arial" font-size="16" text-anchor="middle" fill="white">Unity</text>
+  <text x="600" y="155" font-family="Arial" font-size="12" text-anchor="middle" fill="white">High-Fidelity</text>
+  <text x="600" y="175" font-family="Arial" font-size="12" text-anchor="middle" fill="white">Visualization</text>
+  <text x="600" y="195" font-family="Arial" font-size="12" text-anchor="middle" fill="white">Rendering</text>
+
+  <!-- ROS Bridge -->
+  <rect x="350" y="150" width="100" height="50" fill="#e74c3c" stroke="#c0392b" stroke-width="2" rx="5"/>
+  <text x="400" y="180" font-family="Arial" font-size="12" text-anchor="middle" fill="white">ROS Bridge</text>
+
+  <!-- Arrows -->
+  <line x1="300" y1="175" x2="350" y2="175" stroke="#7f8c8d" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="450" y1="175" x2="500" y2="175" stroke="#7f8c8d" stroke-width="2" marker-end="url(#arrowhead)"/>
+
+  <!-- Arrowhead definition -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7"
+      refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#7f8c8d"/>
+    </marker>
+  </defs>
+
+  <!-- Labels -->
+  <text x="325" y="165" font-family="Arial" font-size="10" text-anchor="middle" fill="#7f8c8d">State</text>
+  <text x="475" y="165" font-family="Arial" font-size="10" text-anchor="middle" fill="#7f8c8d">Sync</text>
+</svg>

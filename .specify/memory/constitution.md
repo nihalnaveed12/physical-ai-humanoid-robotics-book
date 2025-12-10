@@ -1,55 +1,42 @@
-# [PROJECT_NAME] Constitution
-<!-- Example: Spec Constitution, TaskFlow Constitution, etc. -->
+<!-- Sync Impact Report:
+Version change: 1.0.0 → 1.1.0
+Modified principles: Technical Accuracy expanded with verification requirements
+Added sections: Academic Rigor, Modularity, RAG Compliance principles; Technical Stack section; Quality Standards section
+Removed sections: None
+Templates requiring updates: ✅ No updates needed to existing templates
+Follow-up TODOs: None
+-->
+# Physical AI & Humanoid Robotics Book with Integrated RAG Chatbot Constitution
 
 ## Core Principles
 
-### [PRINCIPLE_1_NAME]
-<!-- Example: I. Library-First -->
-[PRINCIPLE_1_DESCRIPTION]
-<!-- Example: Every feature starts as a standalone library; Libraries must be self-contained, independently testable, documented; Clear purpose required - no organizational-only libraries -->
+### Technical Accuracy and Source Verification
+All technical claims must be verified against official docs, peer-reviewed papers, or authoritative sources; All diagrams, URDFs, and code must be validated in their environments
 
-### [PRINCIPLE_2_NAME]
-<!-- Example: II. CLI Interface -->
-[PRINCIPLE_2_DESCRIPTION]
-<!-- Example: Every library exposes functionality via CLI; Text in/out protocol: stdin/args → stdout, errors → stderr; Support JSON + human-readable formats -->
+### Educational Clarity and Accessibility
+Content must be clear and accessible to students and developers learning humanoid robotics with structured approach: Concepts → Theory → Setup → Implementation → Code → Exercises
 
-### [PRINCIPLE_3_NAME]
-<!-- Example: III. Test-First (NON-NEGOTIABLE) -->
-[PRINCIPLE_3_DESCRIPTION]
-<!-- Example: TDD mandatory: Tests written → User approved → Tests fail → Then implement; Red-Green-Refactor cycle strictly enforced -->
+### Reproducibility and Validation (NON-NEGOTIABLE)
+All code snippets, ROS 2 examples, and URDF models must run in simulation or real-world setups; TDD approach required for code examples with validation in actual environments
 
-### [PRINCIPLE_4_NAME]
-<!-- Example: IV. Integration Testing -->
-[PRINCIPLE_4_DESCRIPTION]
-<!-- Example: Focus areas requiring integration tests: New library contract tests, Contract changes, Inter-service communication, Shared schemas -->
+### Academic Rigor and Source Quality
+Peer-reviewed sources preferred; minimum 50% of references must be academic papers; At least 5 sources per module with ≥50% peer-reviewed
 
-### [PRINCIPLE_5_NAME]
-<!-- Example: V. Observability, VI. Versioning & Breaking Changes, VII. Simplicity -->
-[PRINCIPLE_5_DESCRIPTION]
-<!-- Example: Text I/O ensures debuggability; Structured logging required; Or: MAJOR.MINOR.BUILD format; Or: Start simple, YAGNI principles -->
+### Modularity and Consistency
+Each module must be self-contained but consistent with overall book goals; Writing and terminology must remain consistent throughout the book
 
-### [PRINCIPLE_6_NAME]
+### RAG Compliance and Zero Hallucination
+The RAG chatbot must answer strictly from the book content with responses citing module + section; Retrieval queries must be validated; No hallucinations allowed
 
+## Technical Stack and Implementation Standards
+Book framework: Docusaurus (React-based static site generator); Frontend deployment: Vercel; Backend (optional for RAG API): Vercel serverless functions or Railway; RAG Chatbot: FastAPI + OpenAI Agents / ChatKit SDK + Neon Serverless Postgres + Qdrant Cloud Free Tier; Authoring: Claude CLI + Spec-Kit Plus; Programming languages: Python (RAG backend, ROS bridging examples), JavaScript/TypeScript (Docusaurus + frontend)
 
-[PRINCIPLE__DESCRIPTION]
-
-## [SECTION_2_NAME]
-<!-- Example: Additional Constraints, Security Requirements, Performance Standards, etc. -->
-
-[SECTION_2_CONTENT]
-<!-- Example: Technology stack requirements, compliance standards, deployment policies, etc. -->
-
-## [SECTION_3_NAME]
-<!-- Example: Development Workflow, Review Process, Quality Gates, etc. -->
-
-[SECTION_3_CONTENT]
-<!-- Example: Code review requirements, testing gates, deployment approval process, etc. -->
+## Quality Standards and Research Approach
+Citation format: APA style; Code & content: Markdown with embedded code snippets, diagrams, and references; Quality validation: reproducibility of examples, functional RAG queries, zero plagiarism; Research approach: research-concurrent (gather resources while writing); Module implementation rules: Follow dependency order for topics, Include diagrams and code snippets for all technical sections, Design decisions documented in ADRs when multiple valid approaches exist, Ensure consistency and modularity across all modules
 
 ## Governance
-<!-- Example: Constitution supersedes all other practices; Amendments require documentation, approval, migration plan -->
+Constitution governs all project development; All content must comply with technical accuracy, reproducibility, and RAG compliance standards; Changes require verification against authoritative sources; Design decisions documented in ADRs when multiple valid approaches exist
 
-[GOVERNANCE_RULES]
-<!-- Example: All PRs/reviews must verify compliance; Complexity must be justified; Use [GUIDANCE_FILE] for runtime development guidance -->
+**Version**: 1.1.0 | **Ratified**: 2025-12-09 | **Last Amended**: 2025-12-09
 
-**Version**: [CONSTITUTION_VERSION] | **Ratified**: [RATIFICATION_DATE] | **Last Amended**: [LAST_AMENDED_DATE]
-<!-- Example: Version: 2.1.1 | Ratified: 2025-06-13 | Last Amended: 2025-07-16 -->
+

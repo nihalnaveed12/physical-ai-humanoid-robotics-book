@@ -208,3 +208,10 @@ Wait for consent; never auto-create ADRs. Group related decisions (stacks, authe
 
 ## Code Standards
 See `.specify/memory/constitution.md` for code quality, testing, performance, security, and architecture principles.
+
+## Active Technologies
+- Python 3.11 (for ROS 2 integration), Markdown for documentation, C# (for Unity scripting if needed) + ROS 2 (Humble Hawksbill), Gazebo (Fortress/Classic), Unity 2022.3 LTS, Docusaurus for documentation site (002-digital-twin-sim)
+- File-based (URDF models, SDF worlds, Unity scenes, configuration files) (002-digital-twin-sim)
+
+## Recent Changes
+- 002-digital-twin-sim: Added Python 3.11 (for ROS 2 integration), Markdown for documentation, C# (for Unity scripting if needed) + ROS 2 (Humble Hawksbill), Gazebo (Fortress/Classic), Unity 2022.3 LTS, Docusaurus for documentation site
