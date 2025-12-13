@@ -11,10 +11,10 @@ const config = {
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
-  url: 'https://physical-ai-humanoid-robotics-book',
+  url: 'https://physical-ai-humanoid-robotics-book.vercel.app',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/physical-ai-humanoid-robotics-book/',
+  baseUrl: '/',
 
   // GitHub pages deployment config.
   organizationName: 'physical-ai-humanoid-robotics-book', // Usually your GitHub org/user name.
@@ -36,6 +36,7 @@ const config = {
   i18n: {
     defaultLocale: 'en',
     locales: ['en'],
+    path: 'i18n',
   },
 
   presets: [
@@ -50,13 +51,7 @@ const config = {
           editUrl:
             'https://github.com/nihalnaveed12/physical-ai-humanoid-robotics-book/edit/main/frontend/',
         },
-        blog: {
-          showReadingTime: true,
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/nihalnaveed12/physical-ai-humanoid-robotics-book/edit/main/frontend/',
-        },
+        blog: false,  // Disable blog functionality to prevent broken links
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
         },
@@ -82,7 +77,6 @@ const config = {
             position: 'left',
             label: 'Docs',
           },
-          {to: '/blog', label: 'Blog', position: 'left'},
           {
             href: 'https://github.com/physical-ai-humanoid-robotics-book/physical-ai-humanoid-robotics-book',
             label: 'GitHub',
@@ -122,10 +116,6 @@ const config = {
           {
             title: 'More',
             items: [
-              {
-                label: 'Blog',
-                to: '/blog',
-              },
               {
                 label: 'GitHub',
                 href: 'https://github.com/physical-ai-humanoid-robotics-book/physical-ai-humanoid-robotics-book',
