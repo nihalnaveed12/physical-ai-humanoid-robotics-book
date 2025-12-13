@@ -112,6 +112,46 @@ This project follows the documentation structure for the Physical AI & Humanoid 
 - Content meets academic rigor requirements (≥50% peer-reviewed sources)
 - Content follows structured approach: Concepts → Theory → Setup → Implementation → Code → Exercises
 
+## Deployment to Vercel
+
+This project is configured for deployment to Vercel. The following settings are important for proper deployment:
+
+### Configuration Notes
+
+1. **Base URL**: The site is configured with `baseUrl: '/'` which works for root domain deployments
+2. **URL**: The production URL is set to `https://nihal-hackathon-book.vercel.app`
+3. **Build Command**: `npm run build`
+4. **Output Directory**: `build`
+
+### Troubleshooting Common Issues
+
+**CSS/Assets Not Loading:**
+- Ensure the `baseUrl` in `docusaurus.config.js` is correctly set for your deployment
+- For Vercel deployments:
+  - Root domain (e.g., `https://my-project.vercel.app`): Use `baseUrl: '/'`
+  - Custom domain root: Use `baseUrl: '/'`
+  - Subdirectory (e.g., `https://my-site.com/docs/`): Use `baseUrl: '/docs/'`
+
+**Broken Links:**
+- Make sure all internal links use relative paths
+- Check that all navigation links are properly configured
+
+**Vercel-Specific Configuration:**
+- The `vercel.json` file is configured to handle SPA routing correctly
+- Rewrites are set up to serve `index.html` for client-side routing
+- Headers are optimized for caching
+
+### Deployment Settings for Vercel
+
+When deploying to Vercel, ensure the following settings:
+
+- Framework Preset: `Other` or let auto-detect
+- Build Command: `npm run build`
+- Output Directory: `build`
+- Install Command: `npm install`
+
+For custom domains, make sure the URL in `docusaurus.config.js` matches your domain and the baseUrl is set appropriately.
+
 ## Support
 
 For support, please open an issue in the main repository.
