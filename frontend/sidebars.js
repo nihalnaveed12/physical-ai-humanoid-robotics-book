@@ -92,6 +92,132 @@ const sidebars = {
         },
       ],
     },
+    {
+      type: 'category',
+      label: 'Module 3: Perception & Sensor Fusion',
+      items: [
+        'module3-perception-fusion/intro',
+        {
+          type: 'category',
+          label: 'Visual Perception',
+          items: [
+            'module3-perception-fusion/visual-perception',
+          ],
+        },
+        {
+          type: 'category',
+          label: 'LiDAR Perception',
+          items: [
+            'module3-perception-fusion/lidar-perception',
+          ],
+        },
+        {
+          type: 'category',
+          label: 'IMU State Estimation',
+          items: [
+            'module3-perception-fusion/imu-state-estimation',
+          ],
+        },
+        {
+          type: 'category',
+          label: 'Sensor Fusion',
+          items: [
+            'module3-perception-fusion/sensor-fusion',
+          ],
+        },
+        {
+          type: 'category',
+          label: 'Kalman Filter Implementation',
+          items: [
+            'module3-perception-fusion/kalman-filter-implementation',
+          ],
+        },
+        {
+          type: 'category',
+          label: 'Sensor Validation',
+          items: [
+            'module3-perception-fusion/sensor-validation',
+          ],
+        },
+        {
+          type: 'category',
+          label: 'Reality Gap Analysis',
+          items: [
+            'module3-perception-fusion/reality-gap-analysis',
+          ],
+        },
+        {
+          type: 'category',
+          label: 'Sim-to-Reality Transfer',
+          items: [
+            'module3-perception-fusion/sim-reality-transfer-examples',
+          ],
+        },
+        {
+          type: 'category',
+          label: 'ROS 2 Integration',
+          items: [
+            'module3-perception-fusion/ros2-sim-reality-integration',
+          ],
+        },
+        {
+          type: 'category',
+          label: 'Integration Examples',
+          items: [
+            'module3-perception-fusion/integration-examples',
+          ],
+        },
+        {
+          type: 'category',
+          label: 'References',
+          items: [
+            'module3-perception-fusion/references',
+          ],
+        },
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Module 4: Vision-Language-Action (VLA)',
+      items: [
+        'module4-vla/intro',
+        {
+          type: 'category',
+          label: 'Voice-to-Action Interfaces',
+          items: [
+            'module4-vla/voice-to-action-interfaces',
+          ],
+        },
+        {
+          type: 'category',
+          label: 'Cognitive Planning with LLMs',
+          items: [
+            'module4-vla/cognitive-planning-llms',
+          ],
+        },
+        {
+          type: 'category',
+          label: 'Vision-Language Integration',
+          items: [
+            'module4-vla/vision-language-integration',
+          ],
+        },
+        {
+          type: 'category',
+          label: 'Capstone - Autonomous Humanoid',
+          items: [
+            'module4-vla/capstone-autonomous-humanoid',
+          ],
+        },
+        {
+          type: 'category',
+          label: 'References',
+          items: [
+            'module4-vla/references',
+          ],
+        },
+      ],
+    },
     // Add other modules here as they are developed
   ],
 };

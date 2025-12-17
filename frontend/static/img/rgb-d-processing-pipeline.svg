@@ -1,0 +1,77 @@
+<!-- Placeholder SVG for RGB-D Processing Pipeline -->
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600">
+  <title>RGB-D Processing Pipeline</title>
+  <desc>Diagram showing the processing pipeline for RGB and depth camera data</desc>
+
+  <!-- Background -->
+  <rect width="100%" height="100%" fill="#f8f9fa"/>
+
+  <!-- Input sensors -->
+  <g transform="translate(100, 100)">
+    <rect x="-50" y="-30" width="100" height="60" fill="#f28e2c" fill-opacity="0.3" stroke="#f28e2c" stroke-width="2" rx="5"/>
+    <text x="0" y="5" text-anchor="middle" font-family="Arial" font-size="14" fill="#333">RGB Camera</text>
+  </g>
+
+  <g transform="translate(100, 200)">
+    <rect x="-50" y="-30" width="100" height="60" fill="#499894" fill-opacity="0.3" stroke="#499894" stroke-width="2" rx="5"/>
+    <text x="0" y="5" text-anchor="middle" font-family="Arial" font-size="14" fill="#333">Depth Camera</text>
+  </g>
+
+  <!-- RGB Processing -->
+  <g transform="translate(300, 100)">
+    <rect x="-80" y="-30" width="160" height="60" fill="#59a14f" fill-opacity="0.3" stroke="#59a14f" stroke-width="2" rx="5"/>
+    <text x="0" y="5" text-anchor="middle" font-family="Arial" font-size="14" fill="#333">RGB Processing</text>
+    <text x="0" y="25" text-anchor="middle" font-family="Arial" font-size="12" fill="#555">(Filtering, Feature Extraction)</text>
+  </g>
+
+  <!-- Depth Processing -->
+  <g transform="translate(300, 200)">
+    <rect x="-80" y="-30" width="160" height="60" fill="#59a14f" fill-opacity="0.3" stroke="#59a14f" stroke-width="2" rx="5"/>
+    <text x="0" y="5" text-anchor="middle" font-family="Arial" font-size="14" fill="#333">Depth Processing</text>
+    <text x="0" y="25" text-anchor="middle" font-family="Arial" font-size="12" fill="#555">(Filtering, Normal Estimation)</text>
+  </g>
+
+  <!-- Point Cloud Generation -->
+  <g transform="translate(550, 150)">
+    <rect x="-100" y="-30" width="200" height="60" fill="#b69929" fill-opacity="0.3" stroke="#b69929" stroke-width="2" rx="5"/>
+    <text x="0" y="5" text-anchor="middle" font-family="Arial" font-size="14" fill="#333">Point Cloud Generation</text>
+    <text x="0" y="25" text-anchor="middle" font-family="Arial" font-size="12" fill="#555">(Depth + Camera Params → 3D Points)</text>
+  </g>
+
+  <!-- Feature Extraction -->
+  <g transform="translate(300, 350)">
+    <rect x="-80" y="-30" width="160" height="60" fill="#79706e" fill-opacity="0.3" stroke="#79706e" stroke-width="2" rx="5"/>
+    <text x="0" y="5" text-anchor="middle" font-family="Arial" font-size="14" fill="#333">Feature Extraction</text>
+    <text x="0" y="25" text-anchor="middle" font-family="Arial" font-size="12" fill="#555">(Color, Depth, Geometric Features)</text>
+  </g>
+
+  <!-- Object Recognition -->
+  <g transform="translate(550, 350)">
+    <rect x="-80" y="-30" width="160" height="60" fill="#d37295" fill-opacity="0.3" stroke="#d37295" stroke-width="2" rx="5"/>
+    <text x="0" y="5" text-anchor="middle" font-family="Arial" font-size="14" fill="#333">Object Recognition</text>
+  </g>
+
+  <!-- Arrows showing data flow -->
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#555"/>
+    </marker>
+  </defs>
+
+  <!-- RGB flow -->
+  <line x1="150" y1="100" x2="220" y2="100" stroke="#555" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="220" y1="100" x2="220" y2="350" stroke="#555" stroke-width="2" stroke-dasharray="5,5"/>
+  <line x1="220" y1="350" x2="220" y2="150" stroke="#555" stroke-width="2" stroke-dasharray="5,5"/>
+  <line x1="220" y1="150" x2="450" y2="150" stroke="#555" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="450" y1="150" x2="450" y2="350" stroke="#555" stroke-width="2" stroke-dasharray="5,5"/>
+  <line x1="450" y1="350" x2="470" y2="350" stroke="#555" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- Depth flow -->
+  <line x1="150" y1="200" x2="220" y2="200" stroke="#555" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="220" y1="200" x2="220" y2="350" stroke="#555" stroke-width="2" stroke-dasharray="5,5"/>
+  <line x1="220" y1="350" x2="470" y2="350" stroke="#555" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- Labels -->
+  <text x="400" y="50" text-anchor="middle" font-family="Arial" font-size="18" font-weight="bold" fill="#333">RGB-D Processing Pipeline</text>
+  <text x="400" y="75" text-anchor="middle" font-family="Arial" font-size="14" fill="#666">Processing visual and depth information for robotic perception</text>
+</svg>
