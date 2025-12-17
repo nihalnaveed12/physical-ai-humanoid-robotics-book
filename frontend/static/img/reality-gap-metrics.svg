@@ -1,0 +1,252 @@
+<!-- Reality Gap Metrics Visualization -->
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="800" viewBox="0 0 900 800">
+  <title>Reality Gap Metrics Visualization</title>
+  <desc>Visualization of different metrics used to quantify the reality gap between simulation and reality</desc>
+
+  <!-- Background -->
+  <rect width="100%" height="100%" fill="#f8f9fa"/>
+
+  <!-- Main title -->
+  <text x="450" y="40" text-anchor="middle" font-family="Arial" font-size="24" font-weight="bold" fill="#333">Reality Gap Metrics</text>
+  <text x="450" y="65" text-anchor="middle" font-family="Arial" font-size="16" fill="#666">Quantifying the differences between simulation and real-world data</text>
+
+  <!-- Statistical Metrics -->
+  <g transform="translate(100, 120)">
+    <rect x="-80" y="-30" width="160" height="60" fill="#4e79a7" fill-opacity="0.3" stroke="#4e79a7" stroke-width="2" rx="10"/>
+    <text x="0" y="-10" text-anchor="middle" font-family="Arial" font-size="14" fill="#333">Statistical Metrics</text>
+
+    <!-- Mean Difference -->
+    <g transform="translate(-70, 15)">
+      <circle cx="0" cy="0" r="5" fill="#4e79a7"/>
+      <text x="10" y="5" font-family="Arial" font-size="12" fill="#333">Mean Diff: |μₛ - μᵣ|</text>
+    </g>
+
+    <!-- Std Ratio -->
+    <g transform="translate(-70, 35)">
+      <circle cx="0" cy="0" r="5" fill="#4e79a7"/>
+      <text x="10" y="5" font-family="Arial" font-size="12" fill="#333">Std Ratio: σᵣ/σₛ</text>
+    </g>
+
+    <!-- Skewness Difference -->
+    <g transform="translate(-70, 55)">
+      <circle cx="0" cy="0" r="5" fill="#4e79a7"/>
+      <text x="10" y="5" font-family="Arial" font-size="12" fill="#333">Skew Diff: |Sₐ - Sᵣ|</text>
+    </g>
+  </g>
+
+  <!-- Distributional Metrics -->
+  <g transform="translate(350, 120)">
+    <rect x="-80" y="-30" width="160" height="60" fill="#f28e2c" fill-opacity="0.3" stroke="#f28e2c" stroke-width="2" rx="10"/>
+    <text x="0" y="-10" text-anchor="middle" font-family="Arial" font-size="14" fill="#333">Distributional Metrics</text>
+
+    <!-- KL Divergence -->
+    <g transform="translate(-70, 15)">
+      <circle cx="0" cy="0" r="5" fill="#f28e2c"/>
+      <text x="10" y="5" font-family="Arial" font-size="12" fill="#333">KL Div: D(Pᵣ||Pₛ)</text>
+    </g>
+
+    <!-- JS Divergence -->
+    <g transform="translate(-70, 35)">
+      <circle cx="0" cy="0" r="5" fill="#f28e2c"/>
+      <text x="10" y="5" font-family="Arial" font-size="12" fill="#333">JS Div: JSD(Pᵣ,Pₛ)</text>
+    </g>
+
+    <!-- Wasserstein Distance -->
+    <g transform="translate(-70, 55)">
+      <circle cx="0" cy="0" r="5" fill="#f28e2c"/>
+      <text x="10" y="5" font-family="Arial" font-size="12" fill="#333">W Dist: W(Pᵣ,Pₛ)</text>
+    </g>
+  </g>
+
+  <!-- Perceptual Metrics -->
+  <g transform="translate(600, 120)">
+    <rect x="-80" y="-30" width="160" height="60" fill="#e15759" fill-opacity="0.3" stroke="#e15759" stroke-width="2" rx="10"/>
+    <text x="0" y="-10" text-anchor="middle" font-family="Arial" font-size="14" fill="#333">Perceptual Metrics</text>
+
+    <!-- SSIM -->
+    <g transform="translate(-70, 15)">
+      <circle cx="0" cy="0" r="5" fill="#e15759"/>
+      <text x="10" y="5" font-family="Arial" font-size="12" fill="#333">SSIM: Structural Similarity</text>
+    </g>
+
+    <!-- PSNR -->
+    <g transform="translate(-70, 35)">
+      <circle cx="0" cy="0" r="5" fill="#e15759"/>
+      <text x="10" y="5" font-family="Arial" font-size="12" fill="#333">PSNR: Peak Signal-to-Noise</text>
+    </g>
+
+    <!-- LPIPS -->
+    <g transform="translate(-70, 55)">
+      <circle cx="0" cy="0" r="5" fill="#e15759"/>
+      <text x="10" y="5" font-family="Arial" font-size="12" fill="#333">LPIPS: Perceptual Similarity</text>
+    </g>
+  </g>
+
+  <!-- Gap Quantification Visual -->
+  <g transform="translate(150, 250)">
+    <!-- Simulated data distribution -->
+    <path d="M 0 0 C 30 -40, 60 -40, 90 0 C 60 40, 30 40, 0 0 Z" fill="#4e79a7" fill-opacity="0.5" stroke="#4e79a7" stroke-width="2"/>
+    <text x="45" y="-50" text-anchor="middle" font-family="Arial" font-size="12" fill="#333">Simulation</text>
+
+    <!-- Real data distribution -->
+    <path d="M 50 20 C 80 -20, 110 -20, 140 20 C 110 60, 80 60, 50 20 Z" fill="#e15759" fill-opacity="0.5" stroke="#e15759" stroke-width="2"/>
+    <text x="95" y="-10" text-anchor="middle" font-family="Arial" font-size="12" fill="#333">Reality</text>
+
+    <!-- Overlap area -->
+    <path d="M 50 20 C 60 0, 75 -20, 90 -20 C 105 -20, 120 0, 130 20 C 120 40, 105 60, 90 60 C 75 60, 60 40, 50 20 Z" fill="#76b7b2" fill-opacity="0.5" stroke="#76b7b2" stroke-width="2"/>
+    <text x="90" y="5" text-anchor="middle" font-family="Arial" font-size="12" fill="#333">Overlap</text>
+
+    <!-- Gap annotation -->
+    <line x1="90" y1="30" x2="90" y2="70" stroke="#555" stroke-width="2" stroke-dasharray="5,5"/>
+    <text x="90" y="90" text-anchor="middle" font-family="Arial" font-size="12" fill="#e15759" font-weight="bold">Reality Gap</text>
+
+    <!-- Axis -->
+    <line x1="-30" y1="80" x2="170" y2="80" stroke="#333" stroke-width="2"/>
+    <text x="70" y="100" text-anchor="middle" font-family="Arial" font-size="12" fill="#333">Feature Space</text>
+
+    <!-- Legend -->
+    <g transform="translate(-40, 110)">
+      <rect x="0" y="0" width="15" height="15" fill="#4e79a7" fill-opacity="0.5" stroke="#4e79a7" stroke-width="1"/>
+      <text x="20" y="12" font-family="Arial" font-size="10" fill="#333">Simulation Data</text>
+
+      <rect x="0" y="20" width="15" height="15" fill="#e15759" fill-opacity="0.5" stroke="#e15759" stroke-width="1"/>
+      <text x="20" y="32" font-family="Arial" font-size="10" fill="#333">Reality Data</text>
+
+      <rect x="0" y="40" width="15" height="15" fill="#76b7b2" fill-opacity="0.5" stroke="#76b7b2" stroke-width="1"/>
+      <text x="20" y="52" font-family="Arial" font-size="10" fill="#333">Common Region</text>
+    </g>
+  </g>
+
+  <!-- Functional Metrics -->
+  <g transform="translate(500, 350)">
+    <rect x="-120" y="-30" width="240" height="120" fill="#76b7b2" fill-opacity="0.3" stroke="#76b7b2" stroke-width="2" rx="10"/>
+    <text x="0" y="-10" text-anchor="middle" font-family="Arial" font-size="14" fill="#333">Functional Metrics</text>
+
+    <!-- MSE -->
+    <g transform="translate(-110, 15)">
+      <circle cx="0" cy="0" r="5" fill="#76b7b2"/>
+      <text x="10" y="5" font-family="Arial" font-size="12" fill="#333">MSE: Mean Squared Error</text>
+      <text x="10" y="20" font-family="Arial" font-size="10" fill="#555">MSE = ¹/ₙ Σ(yᵣ - ŷₛ)²</text>
+    </g>
+
+    <!-- MAE -->
+    <g transform="translate(-110, 45)">
+      <circle cx="0" cy="0" r="5" fill="#76b7b2"/>
+      <text x="10" y="5" font-family="Arial" font-size="12" fill="#333">MAE: Mean Absolute Error</text>
+      <text x="10" y="20" font-family="Arial" font-size="10" fill="#555">MAE = ¹/ₙ Σ|yᵣ - ŷₛ|</text>
+    </g>
+
+    <!-- Correlation -->
+    <g transform="translate(-110, 75)">
+      <circle cx="0" cy="0" r="5" fill="#76b7b2"/>
+      <text x="10" y="5" font-family="Arial" font-size="12" fill="#333">Correlation: ρ(yᵣ, ŷₛ)</text>
+      <text x="10" y="20" font-family="Arial" font-size="10" fill="#555">Measures linear relationship</text>
+    </g>
+  </g>
+
+  <!-- Gap Severity Scale -->
+  <g transform="translate(150, 500)">
+    <rect x="-80" y="-30" width="160" height="150" fill="#bab0ac" fill-opacity="0.3" stroke="#bab0ac" stroke-width="2" rx="10"/>
+    <text x="0" y="-10" text-anchor="middle" font-family="Arial" font-size="14" fill="#333">Gap Severity Scale</text>
+
+    <!-- Gradient bar -->
+    <defs>
+      <linearGradient id="gapGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+        <stop offset="0%" stop-color="#59a14f" stop-opacity="0.8"/>  <!-- Good (Green) -->
+        <stop offset="25%" stop-color="#8cd17d" stop-opacity="0.8"/> <!-- OK (Light Green) -->
+        <stop offset="50%" stop-color="#f28e2c" stop-opacity="0.8"/> <!-- Moderate (Orange) -->
+        <stop offset="75%" stop-color="#e15759" stop-opacity="0.8"/> <!-- High (Red) -->
+        <stop offset="100%" stop-color="#af7aa1" stop-opacity="0.8"/> <!-- Critical (Purple) -->
+      </linearGradient>
+    </defs>
+
+    <rect x="-50" y="10" width="20" height="100" fill="url(#gapGradient)" stroke="#333" stroke-width="1"/>
+
+    <!-- Scale labels -->
+    <text x="0" y="15" text-anchor="start" font-family="Arial" font-size="10" fill="#59a14f">Good</text>
+    <text x="0" y="35" text-anchor="start" font-family="Arial" font-size="10" fill="#8cd17d">OK</text>
+    <text x="0" y="55" text-anchor="start" font-family="Arial" font-size="10" fill="#f28e2c">Moderate</text>
+    <text x="0" y="75" text-anchor="start" font-family="Arial" font-size="10" fill="#e15759">High</text>
+    <text x="0" y="95" text-anchor="start" font-family="Arial" font-size="10" fill="#af7aa1">Critical</text>
+
+    <!-- Example gap values -->
+    <g transform="translate(40, 20)">
+      <circle cx="0" cy="0" r="4" fill="#59a14f"/>
+      <text x="10" y="5" font-family="Arial" font-size="10" fill="#333">0.0-0.2</text>
+    </g>
+    <g transform="translate(40, 40)">
+      <circle cx="0" cy="0" r="4" fill="#8cd17d"/>
+      <text x="10" y="5" font-family="Arial" font-size="10" fill="#333">0.2-0.4</text>
+    </g>
+    <g transform="translate(40, 60)">
+      <circle cx="0" cy="0" r="4" fill="#f28e2c"/>
+      <text x="10" y="5" font-family="Arial" font-size="10" fill="#333">0.4-0.6</text>
+    </g>
+    <g transform="translate(40, 80)">
+      <circle cx="0" cy="0" r="4" fill="#e15759"/>
+      <text x="10" y="5" font-family="Arial" font-size="10" fill="#333">0.6-0.8</text>
+    </g>
+    <g transform="translate(40, 100)">
+      <circle cx="0" cy="0" r="4" fill="#af7aa1"/>
+      <text x="10" y="5" font-family="Arial" font-size="10" fill="#333">0.8-1.0</text>
+    </g>
+  </g>
+
+  <!-- Mitigation Strategies -->
+  <g transform="translate(450, 550)">
+    <rect x="-150" y="-30" width="300" height="180" fill="#d37295" fill-opacity="0.3" stroke="#d37295" stroke-width="2" rx="10"/>
+    <text x="0" y="-10" text-anchor="middle" font-family="Arial" font-size="14" fill="#333">Mitigation Strategies</text>
+
+    <!-- Domain Randomization -->
+    <g transform="translate(-140, 15)">
+      <rect x="0" y="0" width="100" height="25" fill="#59a14f" fill-opacity="0.7" stroke="#59a14f" stroke-width="1" rx="5"/>
+      <text x="50" y="17" text-anchor="middle" font-family="Arial" font-size="10" fill="white">Domain Rand</text>
+    </g>
+
+    <!-- Adversarial Training -->
+    <g transform="translate(30, 15)">
+      <rect x="0" y="0" width="100" height="25" fill="#b279a2" fill-opacity="0.7" stroke="#b279a2" stroke-width="1" rx="5"/>
+      <text x="50" y="17" text-anchor="middle" font-family="Arial" font-size="10" fill="white">Adv. Training</text>
+    </g>
+
+    <!-- Fine-tuning -->
+    <g transform="translate(-140, 45)">
+      <rect x="0" y="0" width="100" height="25" fill="#ff9da7" fill-opacity="0.7" stroke="#ff9da7" stroke-width="1" rx="5"/>
+      <text x="50" y="17" text-anchor="middle" font-family="Arial" font-size="10" fill="white">Fine-tuning</text>
+    </g>
+
+    <!-- Simulated Annealing -->
+    <g transform="translate(30, 45)">
+      <rect x="0" y="0" width="100" height="25" fill="#edc949" fill-opacity="0.7" stroke="#edc949" stroke-width="1" rx="5"/>
+      <text x="50" y="17" text-anchor="middle" font-family="Arial" font-size="10" fill="white">Gradual Transfer</text>
+    </g>
+
+    <!-- Model Adaptation -->
+    <g transform="translate(-140, 75)">
+      <rect x="0" y="0" width="100" height="25" fill="#76b7b2" fill-opacity="0.7" stroke="#76b7b2" stroke-width="1" rx="5"/>
+      <text x="50" y="17" text-anchor="middle" font-family="Arial" font-size="10" fill="white">Model Adapt</text>
+    </g>
+
+    <!-- Data Augmentation -->
+    <g transform="translate(30, 75)">
+      <rect x="0" y="0" width="100" height="25" fill="#f1ce63" fill-opacity="0.7" stroke="#f1ce63" stroke-width="1" rx="5"/>
+      <text x="50" y="17" text-anchor="middle" font-family="Arial" font-size="10" fill="white">Data Augment</text>
+    </g>
+
+    <!-- Labels -->
+    <text x="-90" y="105" text-anchor="start" font-family="Arial" font-size="9" fill="#555">Modify sim to match real</text>
+    <text x="80" y="105" text-anchor="start" font-family="Arial" font-size="9" fill="#555">Learn invariant features</text>
+    <text x="-90" y="125" text-anchor="start" font-family="Arial" font-size="9" fill="#555">Adjust trained model</text>
+    <text x="80" y="125" text-anchor="start" font-family="Arial" font-size="9" fill="#555">Progressive domain shift</text>
+    <text x="-90" y="145" text-anchor="start" font-family="Arial" font-size="9" fill="#555">Adapt model architecture</text>
+    <text x="80" y="145" text-anchor="start" font-family="Arial" font-size="9" fill="#555">Enhance training data</text>
+  </g>
+
+  <!-- Example Gap Scores -->
+  <g transform="translate(150, 700)">
+    <rect x="-80" y="-25" width="160" height="50" fill="#a87c9f" fill-opacity="0.3" stroke="#a87c9f" stroke-width="2" rx="10"/>
+    <text x="0" y="-5" text-anchor="middle" font-family="Arial" font-size="12" fill="#333">Example Gap Scores</text>
+    <text x="0" y="10" text-anchor="middle" font-family="Arial" font-size="10" fill="#555">Low Gap: 0.1-0.3 (Good Transfer)</text>
+    <text x="0" y="25" text-anchor="middle" font-family="Arial" font-size="10" fill="#555">High Gap: 0.7-1.0 (Poor Transfer)</text>
+  </g>
+</svg>

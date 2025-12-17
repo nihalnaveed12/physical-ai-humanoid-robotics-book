@@ -1,0 +1,63 @@
+<!-- Fusion Architecture Diagram -->
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600">
+  <title>Sensor Fusion Architecture</title>
+  <desc>Diagram showing the architecture of multi-sensor fusion system</desc>
+
+  <!-- Background -->
+  <rect width="100%" height="100%" fill="#f8f9fa"/>
+
+  <!-- Sensor inputs -->
+  <g transform="translate(100, 100)">
+    <rect x="-40" y="-25" width="80" height="50" fill="#f28e2c" fill-opacity="0.3" stroke="#f28e2c" stroke-width="2" rx="5"/>
+    <text x="0" y="5" text-anchor="middle" font-family="Arial" font-size="12" fill="#333">Camera</text>
+  </g>
+
+  <g transform="translate(100, 200)">
+    <rect x="-40" y="-25" width="80" height="50" fill="#4e79a7" fill-opacity="0.3" stroke="#4e79a7" stroke-width="2" rx="5"/>
+    <text x="0" y="5" text-anchor="middle" font-family="Arial" font-size="12" fill="#333">LiDAR</text>
+  </g>
+
+  <g transform="translate(100, 300)">
+    <rect x="-40" y="-25" width="80" height="50" fill="#e15759" fill-opacity="0.3" stroke="#e15759" stroke-width="2" rx="5"/>
+    <text x="0" y="5" text-anchor="middle" font-family="Arial" font-size="12" fill="#333">IMU</text>
+  </g>
+
+  <g transform="translate(100, 400)">
+    <rect x="-40" y="-25" width="80" height="50" fill="#76b7b2" fill-opacity="0.3" stroke="#76b7b2" stroke-width="2" rx="5"/>
+    <text x="0" y="5" text-anchor="middle" font-family="Arial" font-size="12" fill="#333">GPS</text>
+  </g>
+
+  <!-- Fusion Engine -->
+  <g transform="translate(350, 250)">
+    <rect x="-80" y="-50" width="160" height="100" fill="#59a14f" fill-opacity="0.3" stroke="#59a14f" stroke-width="3" rx="10"/>
+    <text x="0" y="-15" text-anchor="middle" font-family="Arial" font-size="14" fill="#333">Fusion Engine</text>
+    <text x="0" y="0" text-anchor="middle" font-family="Arial" font-size="12" fill="#555">(Kalman Filter,</text>
+    <text x="0" y="15" text-anchor="middle" font-family="Arial" font-size="12" fill="#555">Particle Filter,</text>
+    <text x="0" y="30" text-anchor="middle" font-family="Arial" font-size="12" fill="#555">Neural Network)</text>
+  </g>
+
+  <!-- Fused Output -->
+  <g transform="translate(600, 250)">
+    <rect x="-60" y="-30" width="120" height="60" fill="#b279a2" fill-opacity="0.3" stroke="#b279a2" stroke-width="2" rx="5"/>
+    <text x="0" y="5" text-anchor="middle" font-family="Arial" font-size="14" fill="#333">Fused State</text>
+    <text x="0" y="25" text-anchor="middle" font-family="Arial" font-size="12" fill="#555">(Pose, Velocity)</text>
+  </g>
+
+  <!-- Arrows showing data flow -->
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#555"/>
+    </marker>
+  </defs>
+
+  <line x1="140" y1="100" x2="270" y2="230" stroke="#555" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="140" y1="200" x2="270" y2="240" stroke="#555" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="140" y1="300" x2="270" y2="250" stroke="#555" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="140" y1="400" x2="270" y2="260" stroke="#555" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <line x1="430" y1="250" x2="540" y2="250" stroke="#555" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- Labels -->
+  <text x="400" y="50" text-anchor="middle" font-family="Arial" font-size="18" font-weight="bold" fill="#333">Multi-Sensor Fusion Architecture</text>
+  <text x="400" y="75" text-anchor="middle" font-family="Arial" font-size="14" fill="#666">Combining data from multiple sensors for robust perception</text>
+</svg>

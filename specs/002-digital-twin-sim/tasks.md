@@ -29,7 +29,7 @@ description: "Task list for Module 2: The Digital Twin (Gazebo & Unity)"
 
 - [ ] T001 Create module directory structure in frontend/docs/module2-digital-twin/
 - [ ] T002 [P] Create assets directory structure (diagrams, urdf-examples, sdf-worlds)
-- [ ] T003 [P] Set up basic documentation files and navigation structure
+- [x] T003 [P] Set up basic documentation files and navigation structure
 
 ---
 

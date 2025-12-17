@@ -1,0 +1,207 @@
+<?xml version="1.0"?>
+<robot name="simple_sensor_processing_example">
+  <!-- Base Link -->
+  <link name="base_link">
+    <visual>
+      <geometry>
+        <box size="0.2 0.1 0.1"/>
+      </geometry>
+      <material name="blue">
+        <color rgba="0 0 1 1"/>
+      </material>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="0.2 0.1 0.1"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="1.0"/>
+      <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01"/>
+    </inertial>
+  </link>
+
+  <!-- Head with Sensor Suite -->
+  <link name="head">
+    <visual>
+      <geometry>
+        <sphere radius="0.05"/>
+      </geometry>
+      <material name="white">
+        <color rgba="1 1 1 1"/>
+      </material>
+    </visual>
+    <collision>
+      <geometry>
+        <sphere radius="0.05"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="0.2"/>
+      <inertia ixx="0.0001" ixy="0" ixz="0" iyy="0.0001" iyz="0" izz="0.0001"/>
+    </inertial>
+  </link>
+
+  <joint name="head_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="head"/>
+    <origin xyz="0 0 0.1" rpy="0 0 0"/>
+  </joint>
+
+  <!-- Camera Mount -->
+  <link name="camera_mount">
+    <visual>
+      <geometry>
+        <box size="0.02 0.02 0.02"/>
+      </geometry>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="0.02 0.02 0.02"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="0.05"/>
+      <inertia ixx="0.000001" ixy="0" ixz="0" iyy="0.000001" iyz="0" izz="0.000001"/>
+    </inertial>
+  </link>
+
+  <joint name="camera_mount_joint" type="fixed">
+    <parent link="head"/>
+    <child link="camera_mount"/>
+    <origin xyz="0.03 0 0.02" rpy="0 0 0"/>
+  </joint>
+
+  <!-- IMU Mount -->
+  <link name="imu_mount">
+    <visual>
+      <geometry>
+        <box size="0.01 0.01 0.01"/>
+      </geometry>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="0.01 0.01 0.01"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="0.01"/>
+      <inertia ixx="0.0000001" ixy="0" ixz="0" iyy="0.0000001" iyz="0" izz="0.0000001"/>
+    </inertial>
+  </link>
+
+  <joint name="imu_mount_joint" type="fixed">
+    <parent link="head"/>
+    <child link="imu_mount"/>
+    <origin xyz="0.02 0 0.03" rpy="0 0 0"/>
+  </joint>
+
+  <!-- Gazebo Camera Simulation -->
+  <gazebo reference="camera_mount">
+    <sensor name="rgb_camera" type="camera">
+      <pose>0 0 0 0 0 0</pose>
+      <camera name="rgb_cam">
+        <horizontal_fov>1.047</horizontal_fov>  <!-- 60 degrees -->
+        <image>
+          <width>640</width>
+          <height>480</height>
+          <format>R8G8B8</format>
+        </image>
+        <clip>
+          <near>0.1</near>
+          <far>10.0</far>
+        </clip>
+      </camera>
+      <plugin name="camera_controller" filename="libgazebo_ros_camera.so">
+        <ros>
+          <namespace>camera</namespace>
+          <remapping>~/image_raw:=image</remapping>
+          <remapping>~/camera_info:=camera_info</remapping>
+        </ros>
+        <camera_name>rgb_camera</camera_name>
+        <image_topic_name>image</image_topic_name>
+        <camera_info_topic_name>camera_info</camera_info_topic_name>
+        <frame_name>camera_mount</frame_name>
+      </plugin>
+    </sensor>
+  </gazebo>
+
+  <!-- Gazebo Depth Camera Simulation -->
+  <gazebo reference="camera_mount">
+    <sensor name="depth_camera" type="depth">
+      <pose>0 0.01 0 0 0 0</pose>
+      <camera name="depth_cam">
+        <horizontal_fov>1.047</horizontal_fov>  <!-- 60 degrees -->
+        <image>
+          <width>640</width>
+          <height>480</height>
+          <format>R8G8B8</format>
+        </image>
+        <clip>
+          <near>0.1</near>
+          <far>10.0</far>
+        </clip>
+      </camera>
+      <plugin name="depth_camera_controller" filename="libgazebo_ros_openni_kinect.so">
+        <ros>
+          <namespace>depth_camera</namespace>
+          <remapping>~/rgb/image_raw:=image</remapping>
+          <remapping>~/depth/image_raw:=depth</remapping>
+          <remapping>~/rgb/camera_info:=camera_info</remapping>
+        </ros>
+        <camera_name>depth_camera</camera_name>
+        <image_topic_name>image</image_topic_name>
+        <depth_image_topic_name>depth</depth_image_topic_name>
+        <point_cloud_topic_name>points</point_cloud_topic_name>
+        <frame_name>camera_mount</frame_name>
+      </plugin>
+    </sensor>
+  </gazebo>
+
+  <!-- Gazebo IMU Simulation -->
+  <gazebo reference="imu_mount">
+    <sensor name="imu_sensor" type="imu">
+      <always_on>true</always_on>
+      <update_rate>100</update_rate>
+      <pose>0 0 0 0 0 0</pose>
+      <plugin name="imu_plugin" filename="libgazebo_ros_imu.so">
+        <ros>
+          <namespace>imu</namespace>
+          <remapping>~/out:=data</remapping>
+        </ros>
+        <frame_name>imu_mount</frame_name>
+        <topic>data</topic>
+        <gaussian_noise>0.001</gaussian_noise>
+      </plugin>
+    </sensor>
+  </gazebo>
+
+  <!-- Gazebo LiDAR Simulation -->
+  <gazebo reference="head">
+    <sensor name="lidar_sensor" type="ray">
+      <pose>0.05 0 0.02 0 0 0</pose>
+      <ray>
+        <scan>
+          <horizontal>
+            <samples>360</samples>
+            <resolution>1.0</resolution>
+            <min_angle>-3.14159</min_angle>
+            <max_angle>3.14159</max_angle>
+          </horizontal>
+        </scan>
+        <range>
+          <min>0.1</min>
+          <max>10.0</max>
+          <resolution>0.01</resolution>
+        </range>
+      </ray>
+      <plugin name="lidar_controller" filename="libgazebo_ros_ray_sensor.so">
+        <ros>
+          <namespace>lidar</namespace>
+          <remapping>~/out:=scan</remapping>
+        </ros>
+        <output_type>sensor_msgs/LaserScan</output_type>
+      </plugin>
+    </sensor>
+  </gazebo>
+</robot>
